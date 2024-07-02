@@ -33,8 +33,6 @@ export class UserController {
       destination: './uploads/driving-licenses',
       filename: (req, file, cb) => {
      
-        // console.log('MANUUUU CB',cb)
-        // console.log('MANUUUU REQ',req.user)
 
         // Controle de l'extension du fichier
         const fileExtension = extname(file.originalname).toLowerCase();

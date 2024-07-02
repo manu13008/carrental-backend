@@ -10,7 +10,7 @@ import { CanActivate,    ExecutionContext,    Injectable,    UnauthorizedExcepti
     async canActivate(context: ExecutionContext): Promise<boolean> {
       const request = context.switchToHttp().getRequest();
       const token = this.extractTokenFromHeader(request);
-        console.log('manu ca marche')
+
 
       if (!token) {
         throw new UnauthorizedException();
@@ -27,7 +27,7 @@ import { CanActivate,    ExecutionContext,    Injectable,    UnauthorizedExcepti
         request['user'] = payload;
         console.log('payload',payload)
       } catch {
-        console.log('erreur')
+        // console.log('erreur')
         throw new UnauthorizedException();
       }
       return true;
